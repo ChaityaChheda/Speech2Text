@@ -1,0 +1,6 @@
+After adding sox the error due to Sox still exist
+Solution : Make sure the Path to Sox is correctly mentioned and restart ur comand promt/ terminal. This would solve the problem   
+
+The microphone does not hear and gets silenced, the problem is with sox.(If installed properly)
+Solution : https://github.com/gillesdemey/node-record-lpcm16/issues/8#issuecomment-459752623
+
