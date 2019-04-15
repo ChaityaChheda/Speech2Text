@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 256M
+  name: Speech2Text
+  command: node server.js
+  instances: 1
+  host: MySpeech2Text
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  disk_quota: 1024M

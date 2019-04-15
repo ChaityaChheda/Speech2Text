@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Productivo | Contribute</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
+	<!-- Modernizr JS -->
+	<script src="/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+			<form name="uploadForm" id="lastrow" method="POST" action="/uploadAudio" enctype="multipart/form-data">
+			<div class="row">
+			  <div class="form-group">
+				<input type="file" name="articles[]" multiple class="file hidden">
+				<div class="input-group col-xs-10">
+				  <span class="input-group-btn"><button class="browse btn input-lg" type="button" style="background-color: #233332"><i class="browse glyphicon glyphicon-paperclip" style="color: white"></i></button></span>
+				  <input type="text" name="fname" class="form-control input-lg" placeholder="Attach file" style="background-color: white;">
+				  <span class="input-group-btn">
+					  <button class="btn input-lg" type="submit" style="background-color: #333344; color: white">
+					  <i class="browse glyphicon glyphicon-cloud-upload" style="color: white"></i> 
+					  </button>
+					
+				  </span>
+				</div>
+			  </div>
+			</div>
+		  </form>
+	</body>
+
+	<script type="text/javascript">
+		$(document).on('click', '.browse', function(){
+		  var file = $(this).parent().parent().parent().find('.file');
+		  file.trigger('click');
+		});
+		
+		$(document).on('change', '.file', function(){
+		  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+		});
+		
+		// $(document).on('click', '.edit', function(){
+		//   var rowdiv = $(this).parent().parent().parent();
+		//   rowdiv.html("<input type='file' name='articles[]' multiple class='file hidden'><div class='input-group col-xs-10'><span class='input-group-btn'><button class='browse btn input-lg' type='button' style='background-color: #233332'><i class='browse glyphicon glyphicon-paperclip' style='color: white'></i></button></span><input type='text' class='form-control input-lg' disabled placeholder='Attach file' style='background-color: white'><span class='input-group-btn'><button class='btn input-lg' type='submit' style='background-color: #333344; color: white'><i class='browse glyphicon glyphicon-cloud-upload' style='color: white'></i> </button><button class='edit btn btn-primary input-lg' type='button'><i class='glyphicon glyphicon-edit'></i></button><button class='remove btn btn-danger input-lg' type='button'><i class='glyphicon glyphicon-floppy-remove'></i></button></span></div>");
+		// });
+		
+		// $(document).on('click', '.remove', function(){
+		//   var row = $(this).parent().parent().parent().parent().parent();
+		//   row.remove();
+		//   $('#upload').append("<div class='row'><div class='form-group'><div class='input-group col-xs-10'><span class='input-group-btn'><button class='add btn btn-success input-lg' type='button'><i class='browse glyphicon glyphicon-plus' style='color: white'></i></button></span></div></div></div>");
+		// });
+		
+		$(document).on('click', '.add', function(){
+		  var addbtn = $(this).parent().parent().parent().parent();
+		  addbtn.remove();
+		  $('#upload').append("<form name='uploadForm' method='GET' action='/updateCourse' enctype='multipart/form-data'><div class='row'><div class='form-group'><input type='file' name='articles[]' multiple class='file hidden'><div class='input-group col-xs-10'><span class='input-group-btn'><button class='browse btn input-lg' type='button' style='background-color: #233332'><i class='browse glyphicon glyphicon-paperclip' style='color: white'></i></button></span><input type='text' class='form-control input-lg' name='fname' placeholder='Attach file' style='background-color: white'><span class='input-group-btn'><button class='btn input-lg' type='submit' style='background-color: #333344; color: white'><i class='browse glyphicon glyphicon-cloud-upload' style='color: white'></i> </button></span></div></div></div></form>");
+		  
+		});
+		
+		// $(document).on('click', '.delete', function(){
+		//   var row = $(this).parent().parent();
+		//   row.remove();
+		// });
+		
+		// var app = angular.module('myApp', []);
+		// app.controller('myControl', function($scope, $http) {
+		// 	$scope.donotshow = true;
+			
+			
+			
+			
+			
+		// 	$scope.HideAllArticles = function() {
+		// 		$scope.donotshow = true;
+		// 	}
+			
+		// });
+		
+	</script>
